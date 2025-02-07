@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 from openai import OpenAI
 import base64
 
@@ -52,7 +53,7 @@ def analyze_with_llm(image_url, text_input, model="kimi"):
             return completion.choices[0].message.content
         else:
             # Upload file if it's a local path
-            if image_url.startswith("file://"):
+            if image_url:
                 with open(image_url, 'rb') as f:
                     img_base = base64.b64encode(f.read()).decode('utf-8')
 
