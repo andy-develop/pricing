@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fill Missing Values</title>
+</head>
+<body>
+    <h1>Fill Missing Values</h1>
+    <form action="/confirm_values" method="POST">
+        <!-- Hidden input to store the current analysis_result -->
+        <input type="hidden" name="analysis_result" value="{{ analysis_result | tojson | safe }}">
+
+        <!-- Size Selection -->
+        {% if 'size' in missing_fields %}
+        <h2>Size</h2>
+        {% for option in predefined_options.size %}
+        <label>
+            <input type="radio" name="size" value="{{ option }}"
+                   {% if analysis_result.size == option %}checked{% endif %}>
+            {{ option }}
+        </label><br>
+        {% endfor %}
+        {% endif %}
+
+        <!-- Content Selection -->
+        {% if 'content' in missing_fields %}
+        <h2>Content</h2>
+        {% for option in predefined_options.content %}
+        <label>
+            <input type="radio" name="content" value="{{ option }}"
+                   {% if analysis_result.content == option %}checked{% endif %}>
+            {{ option }}
+        </label><br>
+        {% endfor %}
+        {% endif %}
+
+        <!-- Style Selection -->
+        {% if 'style' in missing_fields %}
+        <h2>Style</h2>
+        {% for option in predefined_options.style %}
+        <label>
+            <input type="radio" name="style" value="{{ option }}"
+                   {% if analysis_result.style == option %}checked{% endif %}>
+            {{ option }}
+        </label><br>
+        {% endfor %}
+        {% endif %}
+
+        <!-- Confirm Button -->
+        <button type="submit">Confirm</button>
+    </form>
+</body>
+</html>

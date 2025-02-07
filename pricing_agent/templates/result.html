@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Art Pricing Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .result-container { background: #f5f5f5; padding: 20px; border-radius: 8px; }
+        .result-section { margin-bottom: 20px; }
+        .result-title { color: #333; margin-bottom: 10px; }
+        .result-content { background: white; padding: 15px; border-radius: 4px; }
+        .price-estimate { font-size: 24px; color: #4CAF50; font-weight: bold; margin: 20px 0; }
+        .back-btn { background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        .back-btn:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>Art Pricing Result</h1>
+    <div class="result-container">
+        <div class="result-section">
+            <h2 class="result-title">Analysis Results</h2>
+            <div class="result-content">
+                <p><strong>Artist:</strong> {{ analysis.artist }}</p>
+                <p><strong>Content:</strong> {{ analysis.content }}</p>
+                <p><strong>Technique:</strong> {{ analysis.technique }}</p>
+                <p><strong>Size:</strong> {{ analysis.size }}</p>
+                <p><strong>Purpose:</strong> {{ analysis.purpose }}</p>
+            </div>
+        </div>
+        
+        <div class="result-section">
+            <h2 class="result-title">Artist Popularity</h2>
+            <div class="result-content">
+                <p><strong>Baidu Results:</strong> {{ popularity.baidu_results }}</p>
+                <p><strong>Xiaohongshu Results:</strong> {{ popularity.xiaohongshu_results }}</p>
+            </div>
+        </div>
+        
+        <div class="price-estimate">
+            Estimated Price: ¥{{ estimate.price }}
+        </div>
+        
+        <div class="result-section">
+            <h2 class="result-title">Pricing Reason</h2>
+            <div class="result-content">
+                <p>{{ estimate.reason }}</p>
+            </div>
+        </div>
+        
+        <button onclick="window.history.back()" class="back-btn">Back to Form</button>
+    </div>
+</body>
+</html>
