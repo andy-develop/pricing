@@ -1,6 +1,4 @@
-以下是一个基于你项目信息生成的较为详细的 README.md 内容，突出了项目的重点部分：
 
-```markdown
 # pricing
 
 ## 项目概述
@@ -77,4 +75,4 @@
 - python-dotenv：用于加载环境变量。
 - flask-wtf：用于处理 Web 表单。
 - flask-sqlalchemy：用于数据库操作。
-```
+
