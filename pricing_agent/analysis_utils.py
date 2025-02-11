@@ -32,7 +32,7 @@ def analyze_input(image_path, text_input):
     except json.JSONDecodeError:
         pass
 
-    if analysis_dict not in locals():
+    if 'analysis_dict' not in locals():
         analysis_dict = {
             '艺术家': '未知',
             '内容': '未知',
